@@ -1,0 +1,32 @@
+
+# Simple Arithmetic Calculator
+
+operator = input("Enter an operator (+ - * /): ")
+num1 = float(input("Enter the 1st number: "))
+num2 = float(input("Enter the 2nd number: "))
+
+if operator == "+":
+    result = num1 + num2
+    print(round(result,3))
+elif operator == "-":
+    result = num1 - num2
+    print(round(result,3))
+elif operator == "*":
+    result = num1 * num2
+    print(round(result,3))
+elif operator == "/":
+    result = num1 / num2
+    print(round(result,3))
+else:
+    print(f"{operator} is not a valid operator")
+
+
+"""
+Note:
+- input() returns values as strings, so float() is used for arithmetic operations.
+- round() is used to convert decimal results into a nearest whole number.
+- For example: 4.0 * 5.2 = 20.8 → round(20.8) = 21.
+- This helps in displaying clean and simplified output without decimals.
+- If exact precision is needed, printing 'result' directly will show the decimal value.
+- You can also use round(result, n) to control the number of decimal places.
+"""
