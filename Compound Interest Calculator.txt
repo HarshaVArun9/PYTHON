@@ -1,0 +1,54 @@
+# Python compound interest calculator
+
+principle = 0
+rate = 0
+time = 0
+
+while True:
+    principle = float(input("Enter the principle amount: "))
+    if principle < 0:
+        print("Principle can't be less than zero")
+    else:
+        break
+
+while True:
+    rate = float(input("Enter the interest rate: "))
+    if rate < 0:
+        print("Interest rate can't be less than zero")
+    else:
+        break
+
+while True:
+    time = int(input("Enter the time in years: "))
+    if time < 0:
+        print("Time can't be less than zero")
+    else:
+        break
+
+total = principle * pow((1 + rate / 100), time)
+
+print(f"Balance after {time} year/s: ${total:.2f}")
+
+
+"""
+Notes (Step-by-Step Explanation):
+
+- The program calculates compound interest using the formula:
+  A = P(1 + r/100)^t
+
+- Variables principle, rate, and time are initialized to store user inputs.
+
+- while True loops are used to repeatedly ask the user for input until valid (non-negative) values are entered.
+
+- If the user enters a negative value, an error message is displayed and input is requested again.
+
+- float() is used for principle and rate to allow decimal values; int() is used for time (years).
+
+- pow((1 + rate / 100), time) calculates the compound growth factor.
+
+- The final total amount is calculated by multiplying principle with the growth factor.
+
+- f-string is used for clean output formatting and ${total:.2f} ensures the result is shown with 2 decimal places.
+
+- Demonstrates key concepts: loops, input validation, arithmetic operations, and formatted output.
+"""
