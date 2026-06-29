@@ -1,0 +1,138 @@
+import time
+import random
+import string
+
+# 1. Calculator
+def calculator():
+    operator = input("Enter operator (+ - * /): ")
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if operator == "+":
+        print("Result:", round(num1 + num2, 3))
+    elif operator == "-":
+        print("Result:", round(num1 - num2, 3))
+    elif operator == "*":
+        print("Result:", round(num1 * num2, 3))
+    elif operator == "/":
+        print("Result:", round(num1 / num2, 3))
+    else:
+        print("Invalid operator")
+
+# 2. Weight Converter
+def weight_converter():
+    weight = float(input("Enter weight: "))
+    unit = input("Convert from (K/L): ")
+
+    if unit == "K":
+        print(f"{round(weight * 2.205, 1)} Lbs")
+    elif unit == "L":
+        print(f"{round(weight / 2.205, 1)} Kgs")
+    else:
+        print("Invalid unit")
+
+# 3. Temperature Converter
+def temperature_converter():
+    unit = input("Convert (C/F): ")
+    temp = float(input("Enter temperature: "))
+
+    if unit == "C":
+        print(f"{round((9 * temp) / 5 + 32, 1)} °F")
+    elif unit == "F":
+        print(f"{round((temp - 32) * 5 / 9, 1)} °C")
+    else:
+        print("Invalid unit")
+
+# 4. Email Slicer
+def email_slicer():
+    email = input("Enter email: ")
+    index = email.index("@")
+    print(f"Username: {email[:index]}, Domain: {email[index+1:]}")
+
+# 5. Countdown Timer
+def countdown_timer():
+    seconds = int(input("Enter time (seconds): "))
+    for x in range(seconds, 0, -1):
+        s = x % 60
+        m = (x // 60) % 60
+        h = x // 3600
+        print(f"{h:02}:{m:02}:{s:02}")
+        time.sleep(1)
+    print("TIME'S UP!")
+
+# 6. Compound Interest
+def compound_interest():
+    p = float(input("Enter principal: "))
+    r = float(input("Enter rate: "))
+    t = int(input("Enter years: "))
+
+    total = p * pow((1 + r / 100), t)
+    print(f"Amount: ${total:.2f}")
+
+# 7. Password Generator
+def password_generator():
+    length = int(input("Enter length: "))
+    chars = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(chars) for _ in range(length))
+    print("Password:", password)
+
+# 8. Palindrome Checker
+def palindrome_checker():
+    text = input("Enter text: ")
+    if text == text[::-1]:
+        print("It is a Palindrome")
+    else:
+        print("Not a palindrome")
+
+# 9. Prime Number Checker
+def prime_checker():
+    num = int(input("Enter number: "))
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                print("Not a prime number")
+                break
+        else:
+            print("It is a prime number")
+    else:
+        print("Invalid input")
+
+# MAIN MENU
+while True:
+    print("===== PYTHON UTILITY APP =====")
+    print("1. Calculator")
+    print("2. Weight Converter")
+    print("3. Temperature Converter")
+    print("4. Email Slicer")
+    print("5. Countdown Timer")
+    print("6. Compound Interest")
+    print("7. Password Generator")
+    print("8. Palindrome Checker")
+    print("9. Prime Checker")
+    print("10. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        calculator()
+    elif choice == "2":
+        weight_converter()
+    elif choice == "3":
+        temperature_converter()
+    elif choice == "4":
+        email_slicer()
+    elif choice == "5":
+        countdown_timer()
+    elif choice == "6":
+        compound_interest()
+    elif choice == "7":
+        password_generator()
+    elif choice == "8":
+        palindrome_checker()
+    elif choice == "9":
+        prime_checker()
+    elif choice == "10":
+        print("Exiting program...")
+        break
+    else:
+        print("Invalid choice")
