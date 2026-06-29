@@ -1,0 +1,31 @@
+# Python temperature converter
+
+unit = input("Is this temperature in Celsius or Fahrenheit (C/F): ")
+temp = float(input("Enter the temperature: "))
+
+if unit == "C":
+    temp = round((9 * temp) / 5 + 32, 1)
+    print(f"The temperature in Fahrenheit is: {temp}°F")
+
+elif unit == "F":
+    temp = round((temp - 32) * 5 / 9, 1)
+    print(f"The temperature in Celsius is: {temp}°C")
+
+else:
+    print(f"{unit} is an invalid unit of measurement")
+
+
+"""
+Notes (Step-by-Step Explanation):
+
+- input() is used to take user input; float() converts temperature into a numeric value for calculations.
+- The user specifies the unit: 'C' for Celsius or 'F' for Fahrenheit.
+- If 'C' is entered, the temperature is converted to Fahrenheit using the formula:
+  (9 * temp) / 5 + 32.
+- If 'F' is entered, the temperature is converted to Celsius using the formula:
+  (temp - 32) * 5 / 9.
+- round(temp, 1) is used to limit the result to 1 decimal place for better readability.
+- f-strings are used to format the output clearly with units (°F or °C).
+- The else block handles invalid input and displays an appropriate message.
+- Demonstrates key concepts: input handling, conditional logic, arithmetic operations, and formatting.
+"""
