@@ -1,0 +1,22 @@
+# Python email slicer
+
+email = input("Enter your email: ")
+
+index = email.index("@")
+
+username = email[:index]
+domain = email[index + 1:]
+
+print(f"Your username is {username} and domain is {domain}")
+
+
+"""
+Notes (Step-by-Step Explanation):
+
+- input() is used to take the email address from the user.
+- email.index("@") finds the position of the '@' symbol in the email string.
+- username is extracted using slicing from the start up to '@' (email[:index]).
+- domain is extracted using slicing from after '@' to the end (email[index + 1:]).
+- f-strings are used to display the username and domain in a clean formatted output.
+- Demonstrates key concepts: string indexing, slicing, user input, and formatting.
+"""
