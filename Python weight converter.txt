@@ -26,6 +26,6 @@ Notes (Step-by-Step Explanation):
 - If 'L' is entered, the weight is converted to kilograms using weight / 2.205.
 - round(weight, 1) is used to limit the result to 1 decimal place for cleaner output.
 - f-strings are used to format and display the result clearly.
-- The else block handles invalid inputs and shows an appropriate message.
+- The else block handles invalid inputs for units and shows an appropriate message.
 - Demonstrates key concepts: input handling, conditional logic, arithmetic operations, and formatting.
 """
