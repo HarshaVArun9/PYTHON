@@ -1,0 +1,19 @@
+# Palindrome Checker
+
+text = input("Enter a word: ")
+
+if text == text[::-1]:
+    print("It is a palindrome")
+else:
+    print("It is not a palindrome")
+
+
+"""
+Notes:
+
+- A palindrome is a word that reads the same forward and backward (e.g., madam).
+- text[::-1] reverses the string using slicing.
+- The program compares the original string with the reversed string.
+- If both are equal, it is a palindrome; otherwise, it is not.
+- Demonstrates string slicing, comparison, and conditional logic.
+"""
